@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context="com.example.android.todolist.MainActivity">
+
+    <TimePicker
+        android:id="@+id/timePicker"
+        android:layout_width="325dp"
+        android:layout_height="356dp" />
+
+    <EditText
+        android:id="@+id/edit_lesson_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:hint="課程名稱"
+        android:paddingBottom="@dimen/activity_horizontal_margin" />
+    <Spinner
+        android:id="@+id/select_lesson_day"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="取消" />
+
+        <Button
+            android:id="@+id/alarm_on"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="130dp"
+            android:layout_marginRight="20dp"
+            android:text="設置時間" />
+    </LinearLayout>
+
+
+
+</LinearLayout>

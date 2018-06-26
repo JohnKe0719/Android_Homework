@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.android.todolist">
+
+    <application
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="B10509019_HW4"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+
+        <!-- The manifest entry for the MainActivity -->
+        <activity android:name="com.example.android.todolist.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- 設定新增課程畫面的label-->
+        <activity
+            android:name="com.example.android.todolist.AddLesson"
+            android:label="新增課程" />
+
+
+        <!--This is required for immediate syncs -->
+        <service
+            android:name=".sync.WaterReminderIntentService"
+            android:exported="false"/>
+
+        <!-- This is the Service declaration used in conjunction with FirebaseJobDispatcher -->
+        <service
+            android:name=".sync.WaterReminderFirebaseJobService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.firebase.jobdispatcher.ACTION_EXECUTE"/>
+            </intent-filter>
+        </service>
+
+        <!--讓Receiver獲得權限-->
+        <receiver android:name=".Alarm_Receiver"/>
+        <!--設置提醒的Service-->
+
+    </application>
+
+</manifest>
